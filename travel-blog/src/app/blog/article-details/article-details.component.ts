@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-article-details',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class ArticleDetailsComponent {
   date: Date = new Date();
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.paramMap.subscribe((data) => {
+      console.log(data);
+    });
+  }
+
 }
