@@ -1,1 +1,10 @@
-<app-article-list-item></app-article-list-item>
+<button (click)="onClick()">Get articles from service</button>
+
+<div class="article-container" *ngFor="let article of articles">
+  <app-article-list-item
+    [title]="article.title"
+    [content]="article.content"
+    [publishDate]="article.publishDate"
+    (articleChange)="onArticleChange($event)"
+  ></app-article-list-item>
+</div>

@@ -1,4 +1,6 @@
 <div class="article-list-item">
-  <h2>Romania</h2>
-  <button>View more</button>
+  <h2>{{ title }}</h2>
+  <p>{{ content }}</p>
+  <p>{{ publishDate | date:"dd/mm/yy" }}</p>
+  <button (click)="onClick()">View more</button>
 </div>
