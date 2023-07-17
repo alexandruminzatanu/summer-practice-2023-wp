@@ -3,4 +3,5 @@
   <p>{{ content }}</p>
   <p>{{ publishDate | date:"dd/mm/yy" }}</p>
   <button (click)="onClick()">View more</button>
+  <button [routerLink]="['../country-details', title]">See country details</button>
 </div>
