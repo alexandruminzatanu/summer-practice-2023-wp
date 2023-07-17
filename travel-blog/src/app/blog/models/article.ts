@@ -4,4 +4,9 @@ export type Article = {
   publishDate: Date;
 };
 
+export interface ServerArticle extends Article {
+  id: number
+};
+
+export type ServerArticles = ServerArticle[];
 export type Articles = Article[];
