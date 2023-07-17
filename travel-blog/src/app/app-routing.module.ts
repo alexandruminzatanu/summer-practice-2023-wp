@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [{
   path: 'home',
@@ -13,6 +15,12 @@ const routes: Routes = [{
   path: 'blog',
   loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
 
+},{
+  path: 'register',
+  component: RegisterComponent
+},{
+  path: 'login',
+  component: LoginComponent
 }, {
   path: '**',
   redirectTo: 'home'

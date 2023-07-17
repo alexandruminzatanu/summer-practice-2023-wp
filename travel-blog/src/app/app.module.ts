@@ -6,10 +6,16 @@ import { AppComponent } from './app.component';
 import { BlogModule } from './blog/blog.module';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AboutComponent],
-  imports: [BrowserModule, AppRoutingModule, BlogModule],
+  declarations: [AppComponent, HomeComponent, AboutComponent, RegisterComponent],
+  imports: [BrowserModule, AppRoutingModule, BlogModule,
+   //import ReactiveFormsModule for building and managing reactive forms
+   ReactiveFormsModule,
+   //import FormsModule for building and managing template-driven forms
+   FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,0 +1,47 @@
+<h1>Register</h1>
+<!-- In order to use reactive forms directives, ReactiveFormsModule must be added to the imports -->
+
+<!-- The [formGroup] directive is used in Angular's reactive forms to bind a FormGroup instance to a <form> -->
+<form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+    <label>First Name: </label>
+    <input type="text" formControlName="firstName">
+    <!-- The formControlName directive is used to bind each input to its assocatied FormControl -->
+
+    <span class="invalid-firstName">
+      <span *ngIf="formGroup.get('firstName')?.errors?.['required']">
+        Please enter your first name.
+      </span>
+      <span *ngIf="formGroup.get('firstName')?.errors?.['minlength']">
+        The first name must be longer than 3 characters.
+      </span>
+    </span>
+
+    <label>Last Name:</label>
+    <input type="text" formControlName="lastName">
+
+    <label>Phone:</label>
+    <input type="text" formControlName="phone">
+
+    <label>Email:</label>
+    <input type="email" formControlName="email">
+
+    <!-- (Task) Create address input-->
+    <!-- <label>Address:</label> -->
+
+    <input type="checkbox" formControlName="sendCatalog" 
+    #checkboxValue 
+    (click)="setNotification(checkboxValue.checked)">Get blog updates on email
+
+    <button type="submit" [disabled]="formGroup.invalid">Submit</button> 
+    <button (click)="setOrPatchValue()">SetValue VS PatchValue</button> 
+</form>
+
+<br> Pristine: {{ formGroup.pristine}}
+<br> Dirty: {{ formGroup.dirty}}
+<br> Valid: {{ formGroup.valid}}
+<br> Invalid: {{ formGroup.invalid}}
+<!-- <br> Errors: {{ formGroup.errors}} -->
+<br> Touched: {{ formGroup.touched}}
+<br> Untouched: {{ formGroup.untouched}}
+
+<br> Value: {{ formGroup.value | json }}
