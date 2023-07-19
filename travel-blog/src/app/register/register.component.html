@@ -25,6 +25,16 @@
     <label>Email:</label>
     <input type="email" formControlName="email">
 
+    <label>Rating:</label>
+    <input type="number" formControlName="rating">
+
+    <span *ngIf="formGroup.get('rating')?.errors?.['range']">
+        Enter number rating between 1 and 5
+    </span>
+
+    <label>Address:</label>
+    <input type="text" formControlName="address">
+
     <!-- (Task) Create address input-->
     <!-- <label>Address:</label> -->
 
