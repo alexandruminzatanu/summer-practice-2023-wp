@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, AboutComponent, RegisterComponent],
@@ -15,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
    //import ReactiveFormsModule for building and managing reactive forms
    ReactiveFormsModule,
    //import FormsModule for building and managing template-driven forms
-   FormsModule],
+   FormsModule,
+   HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
